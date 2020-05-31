@@ -16,6 +16,22 @@ func Reverse(a string) string {
 	return string(b)
 }
 
+func Encode(a string, key int) string {
+	b := []byte(a)
+        for i := 0; i < len(b); i++ {
+		if b[i] >= 'A' && b[i] <= 'Z' {
+			b[i] = 'A' + (b[i] - 'A' + key) % 26
+		} else if b[i] >= 'a' && b[i] <= 'z' {
+                        b[i] = 'a' + (b[i] - 'a' + key) % 26
+                }
+	}
+        return string(b)
+}
+
+func Decode(a string, key int) string {
+        return Encode(a, 26 - key)
+}
+
 func main() {
 	fmt.Println(Reverse("hi, hello"))
 }
