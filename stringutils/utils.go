@@ -20,9 +20,9 @@ func Encode(a string, key int) string {
 	b := []byte(a)
         for i := 0; i < len(b); i++ {
 		if b[i] >= 'A' && b[i] <= 'Z' {
-			b[i] = 'A' + (b[i] - 'A' + key) % 26
+			b[i] = 'A' + (int(b[i]) - 'A' + key) % 26
 		} else if b[i] >= 'a' && b[i] <= 'z' {
-                        b[i] = 'a' + (b[i] - 'a' + key) % 26
+                        b[i] = 'a' + (int(b[i]) - 'a' + key) % 26
                 }
 	}
         return string(b)
