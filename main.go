@@ -3,8 +3,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/utkarshg42/gostarter/stringutils"
 	"github.com/utkarshg42/gostarter/numericutils"
+	"github.com/utkarshg42/gostarter/stringutils"
 )
 
 func main() {
